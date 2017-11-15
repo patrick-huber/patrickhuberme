@@ -19,39 +19,40 @@ Foundation.Interchange.SPECIAL_QUERIES['mediumRetina'] = 'only screen and (min-w
 
 $document.foundation();
 
-// Moving between modals
-// Need this to fix closing of the new modal since it moves focus to carousel slide out of view
-/* HTML example:
-  <a href="#next-modal" data-open="next-modal" data-reveal-return="return-modal-id">go to next modal</a>
-*/
-$('a[data-reveal-return]').on('click', function() {
-  var $a = $(this);
-  var returnModalID = $a.data('reveal-return');
-  var $returnModal = $('#'+returnModalID);
-  var $nextModal = $($a.attr('href'));
-  $nextModal.one('closed.zf.reveal', function() {
-    $returnModal.foundation('open');
-  });
-})
-
-// Fixing bug in reveal close scroll position on mobile devices
-var scrollPosition = 0;
-var modalOpen = false;
-var $reveal = $('.reveal');
-$reveal.on('closeme.zf.reveal', function() {
-  if(!modalOpen) scrollPosition = $document.scrollTop();
-});
-$reveal.on('open.zf.reveal', function() {
-  modalOpen = true;
-});
-$reveal.on('closed.zf.reveal', function() {
-  $document.scrollTop(scrollPosition);
-  modalOpen = false;
-});
 
 
-// Experience carousels
 $document.ready(function ($) {
+  // Moving between modals
+  // Need this to fix closing of the new modal since it moves focus to carousel slide out of view
+  /* HTML example:
+    <a href="#next-modal" data-open="next-modal" data-reveal-return="return-modal-id">go to next modal</a>
+  */
+  $('a[data-reveal-return]').on('click', function() {
+    var $a = $(this);
+    var returnModalID = $a.data('reveal-return');
+    var $returnModal = $('#'+returnModalID);
+    var $nextModal = $($a.attr('href'));
+    $nextModal.one('closed.zf.reveal', function() {
+      $returnModal.foundation('open');
+    });
+  })
+
+  // Fixing bug in reveal close scroll position on mobile devices
+  var scrollPosition = 0;
+  var modalOpen = false;
+  var $reveal = $('.reveal');
+  $reveal.on('closeme.zf.reveal', function() {
+    if(!modalOpen) scrollPosition = $document.scrollTop();
+  });
+  $reveal.on('open.zf.reveal', function() {
+    modalOpen = true;
+  });
+  $reveal.on('closed.zf.reveal', function() {
+    $document.scrollTop(scrollPosition);
+    modalOpen = false;
+  });
+
+  // Experience carousels
   if ($.fn.owlCarousel) {
     var $owl = $('.owl-carousel');
     $owl.owlCarousel({
@@ -76,27 +77,30 @@ $document.ready(function ($) {
       $('html, body').animate({scrollTop: $(this).offset().top });
     });
   }
-});
 
-// Show nav only after initial scroll
-$window.one('scroll', function() {
-  var $primaryNav = $('.nav-primary');
-  $primaryNav.addClass('visible');
-});
-
-
-// Parallax background effect
-var $parallaxSection = $('[data-parallax-bg]');
-$window.on('scroll', function() {
-  $parallaxSection.each(function() {
-    var thisOffset = this.getBoundingClientRect()
-    if(thisOffset.top < document.documentElement.clientHeight && thisOffset.bottom > 0) {
-      // If in view
-      var $background = $(this).find('.background');
-      //var currentTop = $background.css('top');
-      var newTop = ((thisOffset.top / document.documentElement.clientHeight) * 50 - 13).toFixed(2) + 'px';
-      $background.css('top', newTop);
-    }
+    // Show nav only after initial scroll
+  $window.one('scroll', function() {
+    var $primaryNav = $('.nav-primary');
+    $primaryNav.addClass('visible');
   });
+
+
+  // Parallax background effect
+  var $parallaxSection = $('[data-parallax-bg]');
+  $window.on('scroll', function() {
+    $parallaxSection.each(function() {
+      var thisOffset = this.getBoundingClientRect()
+      if(thisOffset.top < document.documentElement.clientHeight && thisOffset.bottom > 0) {
+        // If in view
+        var $background = $(this).find('.background');
+        //var currentTop = $background.css('top');
+        var newTop = ((thisOffset.top / document.documentElement.clientHeight) * 50 - 13).toFixed(2) + 'px';
+        $background.css('top', newTop);
+      }
+    });
+  });
+
+  // Content animations
+  
 });
 
