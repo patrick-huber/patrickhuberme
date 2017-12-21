@@ -26,6 +26,7 @@ PATHS:
   # Paths to JS libraries that don't work with babel
   jsassets:
     - "node_modules/owl.carousel/dist/owl.carousel.min.js"
+    - "node_modules/wowjs/dist/wow.min.js"
   # Paths to Sass libraries, which can then be loaded with @import
   sass:
     - "node_modules/foundation-sites/scss"

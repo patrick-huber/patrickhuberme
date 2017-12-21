@@ -101,6 +101,12 @@ $document.ready(function ($) {
   });
 
   // Content animations
-  
+  if (typeof WOW === "function") {
+      var wow = new WOW({
+      boxClass: 'wow',
+      animateClass: 'is-animating'
+    }).init();
+  }
+
 });
 
