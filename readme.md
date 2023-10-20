@@ -1,4 +1,18 @@
+# Hosting & deployment
+The current host is Hostinger.
+
+## Deploy
+There is an auto-deployment setup to copy dist files to the server whenever a commit is made to the `master` branch in the `patrick-huber/patrickhuberme-dist` repo.
+ 
+1. Build the site (see below)
+1. Copy the compiled files in the `/dist` folder to the `patrickhuberme-dist` repo
+1. Commit to `master` branch and push changes to the repo
+1. The auto-depoy will copy files over to hosting server
+
+
+
 # ZURB Template
+This project was building using the ZURB template. Full details on installation and development below.
 
 [![devDependency Status](https://david-dm.org/zurb/foundation-zurb-template/dev-status.svg)](https://david-dm.org/zurb/foundation-zurb-template#info=devDependencies)
 
