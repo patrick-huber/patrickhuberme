@@ -9,6 +9,8 @@ There is an auto-deployment setup to copy dist files to the server whenever a co
 1. Commit to `master` branch and push changes to the repo
 1. The auto-depoy will copy files over to hosting server
 
+## Tips
+Use node version 8
 
 
 # ZURB Template

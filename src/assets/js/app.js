@@ -50,8 +50,8 @@ $reveal.on('closed.zf.reveal', function() {
 });
 
 
-// Experience carousels
 $document.ready(function ($) {
+  // Experience carousels
   if ($.fn.owlCarousel) {
     var $owl = $('.owl-carousel');
     $owl.owlCarousel({
@@ -76,6 +76,14 @@ $document.ready(function ($) {
       $('html, body').animate({scrollTop: $(this).offset().top });
     });
   }
+
+  // Dynamic dates
+  var currentYear = new Date().getFullYear();
+  var experienceYears = currentYear - 2004;
+  var experienceYearsLeader = currentYear - 2016;
+  $document.find('.experienceYears').text(experienceYears);
+  $document.find('.experienceYearsLeader').text(experienceYearsLeader);
+  
 });
 
 // Show nav only after initial scroll
@@ -99,4 +107,3 @@ $window.on('scroll', function() {
     }
   });
 });
-
