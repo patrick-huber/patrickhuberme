@@ -90,3 +90,38 @@
     }
   }
 }
+
+// Social media menu
+.social {
+  .button {
+    border: 0;
+  }
+  img,
+  svg {
+    width: 2rem;
+  }
+}
+
+#contact {
+  .menu.vertical {
+    margin-bottom: 15px;
+    li {
+      margin: 5px 15px;
+    }
+    a {
+      display: inline;
+      padding: 0.2rem;
+      margin: -0.2rem;
+    }
+  }
+  .media-object {
+    .thumbnail {
+      margin-left: -2rem;
+      img,
+      svg {
+        width: 5rem;
+        height: 5rem;
+      }
+    }
+  }
+}
