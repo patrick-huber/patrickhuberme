@@ -105,8 +105,10 @@ $print-transparent-backgrounds: true;
 @include add-foundation-colors;
 
 $home: $primary-color;
+$portfolio: #E74C3C;
 $experience: $secondary-color;
 $connect: #E74C3C;
+$fair-food-finder: #379afa;
 
 // 2. Breakpoints
 // --------------
@@ -465,7 +467,18 @@ $form-button-radius: $global-radius;
 $label-background: $primary-color;
 $label-color: $white;
 $label-color-alt: $black;
-$label-palette: $foundation-palette;
+// $label-palette: $foundation-palette;
+// Portfolio labels
+$label-palette: (
+  research: #ffeb98,
+  wireframing: #95ffc1,
+  prototyping: #a7f5ff,
+  logo-design: #9fd8ff,
+  ui-design: #74b9e6,
+  coding: #e099ff,
+  video-production: #B8FF99,
+  hardware-design: #AD99FF
+) !default;
 $label-font-size: 0.8rem;
 $label-padding: 0.33333rem 0.5rem;
 $label-radius: $global-radius;

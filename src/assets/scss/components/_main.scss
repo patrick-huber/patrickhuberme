@@ -77,6 +77,10 @@ a {
     border-color: transparent !important;
   }
 }
+figcaption {
+  font-style: italic;
+  opacity: 0.75;
+}
 // Circle image with border
 .img-circle img,
 .img-circle svg {
@@ -101,6 +105,44 @@ a:hover .icon-back {
 .background {
   background: $primary-color;
 }
+.portfolio, .fair-food-finder {
+  .hero .img-circle {
+    background: $portfolio;
+    border-radius: 50%;
+  }
+
+  a {
+    color: $portfolio;
+    -webkit-tap-highlight-color: rgba(231, 76, 60, 0.2);
+    &:hover {
+      color: scale-color($portfolio, $lightness: 0%);
+      background: rgba(231, 76, 60, 0.2);
+    }
+  }
+  .button {
+    border-color: $portfolio;
+  }
+  img,
+  svg {
+     border-color: $portfolio;
+  }
+  .background {
+    background: $portfolio;
+  }
+}
+.fair-food-finder {
+  .background {
+    background: $fair-food-finder;
+  }
+  img,
+  svg {
+     border-color: $fair-food-finder;
+  }
+  .hero-background {
+    background-image: linear-gradient(rgba(2, 47, 91, 0.85), rgba(2, 47, 91, 0.85)), url("/assets/img/food-map.jpg");
+    color: #fff;
+  } 
+}
 .experience {
   a {
     color: $experience;
@@ -119,15 +161,6 @@ a:hover .icon-back {
   }
   .background {
     background: $experience;
-  }
-  .media-object {
-    .thumbnail {
-      img,
-      svg {
-        width: 7rem;
-        height: 7rem;
-      }
-    }
   }
 }
 // Fix link colors on colored backgrounds
@@ -167,6 +200,7 @@ a:hover .icon-back {
   svg {
     margin-bottom: 4vh;
     height: 25vh;
+    width: auto;
   }
   p {
     margin-bottom: 2rem;
@@ -182,6 +216,13 @@ a:hover .icon-back {
     margin-bottom: 1rem;
   }
   @include text-round;
+  // Background image
+  &.hero-background {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
 }
 
 // Standard section styles
@@ -218,6 +259,11 @@ a:hover .icon-back {
   margin-bottom: 0.5rem;
   .thumbnail {
     margin: -1.75rem 0 0 -4rem;
+    img,
+    svg {
+      width: 7rem;
+      height: 7rem;
+    }
   }
 }
 
@@ -383,4 +429,16 @@ a:hover .icon-back {
   &.media {
     margin: 2rem 0;
   }
+  .media-object .thumbnail {
+    img,
+    svg {
+      width: 5rem;
+      height: 5rem;
+    }
+  }
+}
+
+// Portfolio labels
+.label {
+  margin-bottom: 3px;
 }
