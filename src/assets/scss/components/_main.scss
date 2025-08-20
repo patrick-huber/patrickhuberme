@@ -371,6 +371,13 @@ a:hover .icon-back {
 .device-screenshot {
   margin: 2rem;
   max-width: 600px;
+  &.small {
+    max-width: 400px;
+  }
+  &.center {
+    margin: 0 auto;
+    text-align: center;
+  }
 }
 
 // Device screenshots
