@@ -16,11 +16,12 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{{root}}assets/img/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="{{root}}assets/img/favicons/favicon-16x16.png">
     <link rel="manifest" href="{{root}}assets/img/favicons/manifest.json">  
-    <meta name="theme-color" content="{{#ifpage 'index'}}#2daf4a{{/ifpage}}{{#ifpage 'experience'}}#E8983C{{/ifpage}}{{#ifpage 'portfolio'}}#E74C3C{{/ifpage}}">
-    <title>Patrick Huber | Digital Product Designer/Manager/Developer{{#ifpage 'experience'}} | Experience {{/ifpage}}{{#ifpage 'portfolio' 'fair-food-finder'}} | Portfolio{{/ifpage}}{{#ifpage 'fair-food-finder'}} | Fair Food Finder case study{{/ifpage}}</title>
+    <meta name="theme-color" content="{{#ifpage 'index'}}#2daf4a{{/ifpage}}{{#ifpage 'experience'}}#E8983C{{/ifpage}}{{#ifpage 'portfolio' 'chanl-health'}}#E74C3C{{/ifpage}}">
+    <title>{{title}}</title>
     <link rel="stylesheet" href="{{root}}assets/css/app.css">
   </head>
   <body class="{{page}}">
+    {{path}}
     {{> navigation}}
     {{> body}}
     {{> footer}}
